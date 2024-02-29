@@ -89,7 +89,7 @@ class User(AbstractBaseUser):
 
     @property
     def is_staff(self):
-        "Is the user a member of staff?"
+        # "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
@@ -116,7 +116,7 @@ class Room(models.Model):
     is_available = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.hotel_id.name}, {self.room_no}"
+        return f"{self.hotel_id.name}, {self.room_no}, {self.id}"
 
 
 class Booking(models.Model):
